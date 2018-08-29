@@ -35,3 +35,7 @@ array = [(4, '0'), (4, 'a'),(2, 'b'),(1, 'c'),(0, 'd'),(10, 'e'),(9, 'f'),(4, 'h
 selection_sort(array, lambda x, y, ascending=True: x[0] < y[0] if ascending else x[0] > y[0])
 
 print(array)
+
+# time: O(n^2)
+# space: O(1)
+# stable: this implementation that uses shifting is, default implementation which uses swapping isn;t

@@ -17,3 +17,8 @@ print(array)
 
 # can use binary search to find correct position to insert in sorted sub array, 
 # then its called binaryinsertion sort but the time complexity remains same, since time taken to shift elements is linear
+
+# time: O(n^2)
+# space: O(1)
+# stable: yes
+# online: yes
