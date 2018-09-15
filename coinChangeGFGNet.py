@@ -1,4 +1,6 @@
-# https://practice.geeksforgeeks.org/problems/coin-change/0/?ref=self
+#   https://www.geeksforgeeks.org/coin-change-dp-7/
+
+# Working but inefficient solution, gets timed out on gfg
 
 # coins_count = []
 # coins_limit = []
@@ -44,7 +46,10 @@
 
 #     print(count)
 
+memoization_dict = {}
+
 def count(S, m, n):
+    
     if n == 0:
         return 1
 
@@ -54,8 +59,13 @@ def count(S, m, n):
     if n > 0 and m <= 0:
         return 0
 
-    return count(S, m - 1, n) + count(S, m, n - S[m - 1])
+    if memoization_dict.get((m, n), None) is not None:
+        return memoization_dict[(m, n)]
+    else:
+        result = count(S, m - 1, n) + count(S, m, n - S[m - 1])
+        memoization_dict[(m, n)] = result
+        return result
+
 
 # print(count([1, 2, 3], 3, 4))
 print(count([2, 5, 3, 6], 4, 10))
-

@@ -7,6 +7,7 @@ def merge_sort(arr: list, start, end):
     merge_sort(arr, mid_index + 1, end)
     merge(arr, start, mid_index, mid_index + 1, end)
 
+
 def merge(arr, start_1, end_1, start_2, end_2):
     result = []
     i = start_1
@@ -25,9 +26,14 @@ def merge(arr, start_1, end_1, start_2, end_2):
     else:
         result.extend(arr[j:end_2 + 1])
     
-    # replacing two sublist with their merged variant
+    # replacing two sublists with their merged variant
     arr[start_1: end_2 + 1] = result
+
 
 arr = [5, 4, -3, 2, 0, 10, -2, -1]
 merge_sort(arr, 0, len(arr) - 1)
 print(arr)
+
+# time: O(n * log(n)) - all 3 types
+# space: O(n)
+# stable
